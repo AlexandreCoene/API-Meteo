@@ -1,0 +1,131 @@
+﻿<Window x:Class="Alexandre_Coene_App_Meteo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Alexandre_Coene_App_Meteo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="898">
+    <Grid Background="#ABD2FA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Première ligne -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Première ligne avec 5 colonnes -->
+        <Grid Grid.Row="0" Margin="0,0,0,87" Grid.RowSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Vos éléments pour la première ligne ici -->
+            <!-- Exemple : <TextBlock Grid.Column="0" Text="Colonne 1"/> -->
+            <TextBlock Text="Ville:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2"/>
+            <TextBox Grid.Column="2" Name="TB_NewCity" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140"/>
+            <Button Grid.Column="4" Content="Supprimé la ville" FontSize="20" HorizontalAlignment="Center" Click="Button_Dell_Click" VerticalAlignment="Center"/>
+            <Button Grid.Column="3" Content="Ajouté la ville" Click="BTN_ADD_Click"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Text="  Météo :" Name="TB_Meteo" FontSize = "20" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+
+            <TextBlock Text="Ville:" FontSize="20" HorizontalAlignment="Center" Grid.Column="1"/>
+            <ComboBox x:Name="CMB_Cities" Width="150" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" SelectionChanged="CMB_Cities_SelectionChanged">
+
+            </ComboBox>
+        </Grid>
+
+        <!-- Deuxième ligne avec 2 colonnes -->
+        <Grid Grid.Row="1" Background="#00B5D1" Margin="0,0,0,86" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="  Aujourd'hui : " FontWeight="Bold" Name="TB_Jour0" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Température actuelle : " Grid.Column="0" Name="TB_Température" Margin="10,29,0,0"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Température maximale : " Name="TB_Temperature_max" Margin="9,45,0,0" />
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Température minimale : " Name="TB_Temperature_min" Margin="10,61,0,0" />
+
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Vent : " Name="TB_Vent" Margin="244,29,0,0"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Humidité : " Name="TB_Humidité" Margin="244,45,0,0"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Condition : " Name="TB_Condition" Margin="244,62,0,0"/>
+
+            <TextBlock Text="Longitude : " Grid.Column="1" Name="TB_Longitude" Margin="21,30,96,-3"/>
+            <TextBlock Text="Latitude : " Grid.Column="1" Name="TB_Latitude" Margin="21,45,107,-2"/>
+            <TextBlock Text="Pression : " Grid.Column="1" Name="TB_Pression" Margin="21,61,107,-2"/>
+
+            <TextBlock Text="Altitude : " Grid.Column="1" Name="TB_Elevation" Margin="200,30,96,-3"/>
+            <TextBlock Text="Sunrise : " Grid.Column="1" Name="TB_Sunrise" Margin="200,45,107,-2"/>
+            <TextBlock Text="Sunset : " Grid.Column="1" Name="TB_Sunset" Margin="200,61,107,-2"/>
+
+            <!-- Vos éléments pour la deuxième ligne ici -->
+        </Grid>
+
+        <!-- Troisième ligne avec 24 colonnes -->
+        <Grid Grid.Row="2" Background="#00B5D1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text=" Condition :" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Name="TB_Day0"/>
+            <Image Grid.Column="0" HorizontalAlignment="Stretch" Name="Day0_Image"/>
+            <!-- Vos éléments pour la troisième ligne ici -->
+        </Grid>
+
+        <!-- Quatrième ligne avec 3 colonnes -->
+        <Grid Grid.Row="2" Background="#1C5FD3" Margin="0,86,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Name="Day1_Image" HorizontalAlignment="Stretch" />
+            <TextBlock Text=" Jour 1 : " FontWeight="Bold" FontSize="20" Name="TB_Jour1"/>
+            <TextBlock Text="Température min : " Grid.Column="0" Name="TB_min_j1" Margin="0,28,0,-28"/>
+            <TextBlock Text="Température max : " Grid.Column="0" Name="TB_max_j1" Margin="0,43,0,-29"/>
+            <TextBlock Text="Condition : " Grid.Column="0" Name="TB_Condition_J1" Margin="0,58,0,-44"/>
+
+            <Image Grid.Column="2" Name="Day3_Image" HorizontalAlignment="Stretch" />
+            <TextBlock Text=" Jour 3 : " FontWeight="Bold" FontSize="20" Grid.Column="1" Name="TB_Jour3" Foreground="Black"/>
+            <TextBlock Text="Température min : " Grid.Column="1" Name="TB_min_j3" Margin="0,28,0,-28"/>
+            <TextBlock Text="Température max : " Grid.Column="1" Name="TB_max_j3" Margin="0,43,0,-29"/>
+            <TextBlock Text="Condition : " Grid.Column="1" Name="TB_Condition_J3" Margin="0,58,86,-43"/>
+
+
+            <!-- Vos éléments pour la quatrième ligne ici -->
+        </Grid>
+
+        <!-- Cinquième ligne avec 3 colonnes -->
+        <Grid Grid.Row="3" Background="#1C5FD3" Margin="0,87,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" HorizontalAlignment="Stretch" Name="Day2_Image"/>
+            <TextBlock Text=" Jour 2 : " FontWeight="Bold" FontSize="20" Grid.Column="0" Name="TB_Jour2"/>
+            <TextBlock Text="Température min : " Grid.Column="0" Name="TB_min_j2" Margin="0,28,0,-28"/>
+            <TextBlock Text="Température max : " Grid.Column="0" Name="TB_max_j2" Margin="0,45,445,-31" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Condition : " Grid.Column="0" Name="TB_Condition_J2" Margin="0,62,445,-62" Grid.ColumnSpan="2" />
+
+            <Image Grid.Column="1" HorizontalAlignment="Stretch" Name="Day4_Image"/>
+            <TextBlock Text=" Jour 4 : " FontWeight="Bold" FontSize="20" Grid.Column="1" Name="TB_Jour4" Foreground="Black"/>
+            <TextBlock Text="Température min : " Grid.Column="1" Name="TB_min_j4" Margin="0,28,0,-28"/>
+            <TextBlock Text="Température max : " Grid.Column="1" Name="TB_max_j4" Margin="0,45,0,-31"/>
+            <TextBlock Text="Condition : " Grid.Column="1" Name="TB_Condition_J4" Margin="0,62,0,-48"/>
+            <!-- Vos éléments pour la cinquième ligne ici -->
+        </Grid>
+    </Grid>
+</Window>
