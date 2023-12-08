@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 using System.IO; // Ajoutez le namespace System.IO pour lire le fichier
 
-namespace Alexandre_Coene_App_Meteo.Service
+namespace Alexandre_Coene_App_Meteo.Service // Définissez le namespace du projet
 {
-    public class Ville
+    public class Ville // Définissez la classe Ville
     {
         List<string> ls_ville;
-        string filePath = "C:\\Users\\a_coe\\source\\repos\\Alexandre_Coene_App_Meteo\\Alexandre_Coene_App_Meteo\\Ressource\\ville.txt"; // Définissez le chemin du fichier
+        string filePath = @"Ressource/villeLog.txt"; // Définissez le chemin du fichier
         public Ville()
         {
             ls_ville = new List<string>(); // Créez une liste de chaînes pour stocker les villes

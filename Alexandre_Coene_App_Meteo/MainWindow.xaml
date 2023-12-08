@@ -31,8 +31,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Vos éléments pour la première ligne ici -->
-            <!-- Exemple : <TextBlock Grid.Column="0" Text="Colonne 1"/> -->
+            <!-- Les éléments pour la première ligne ici -->
             <TextBlock Text="Ville:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2"/>
             <TextBox Grid.Column="2" Name="TB_NewCity" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140"/>
             <Button Grid.Column="4" Content="Supprimé la ville" FontSize="20" HorizontalAlignment="Center" Click="Button_Dell_Click" VerticalAlignment="Center"/>
@@ -52,6 +51,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Les éléments pour la deuxième ligne ici -->
             <TextBlock Text="  Aujourd'hui : " FontWeight="Bold" Name="TB_Jour0" FontSize="20"/>
             <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Température actuelle : " Grid.Column="0" Name="TB_Température" Margin="10,29,0,0"/>
             <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Température maximale : " Name="TB_Temperature_max" Margin="9,45,0,0" />
@@ -68,8 +68,6 @@
             <TextBlock Text="Altitude : " Grid.Column="1" Name="TB_Elevation" Margin="200,30,96,-3"/>
             <TextBlock Text="Sunrise : " Grid.Column="1" Name="TB_Sunrise" Margin="200,45,107,-2"/>
             <TextBlock Text="Sunset : " Grid.Column="1" Name="TB_Sunset" Margin="200,61,107,-2"/>
-
-            <!-- Vos éléments pour la deuxième ligne ici -->
         </Grid>
 
         <!-- Troisième ligne avec 24 colonnes -->
@@ -79,9 +77,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Les éléments pour la troisième ligne ici -->
             <TextBlock Text=" Condition :" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Name="TB_Day0"/>
             <Image Grid.Column="0" HorizontalAlignment="Stretch" Name="Day0_Image"/>
-            <!-- Vos éléments pour la troisième ligne ici -->
         </Grid>
 
         <!-- Quatrième ligne avec 3 colonnes -->
@@ -91,6 +89,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Les éléments pour la quatrième ligne ici -->
             <Image Grid.Column="0" Name="Day1_Image" HorizontalAlignment="Stretch" />
             <TextBlock Text=" Jour 1 : " FontWeight="Bold" FontSize="20" Name="TB_Jour1"/>
             <TextBlock Text="Température min : " Grid.Column="0" Name="TB_min_j1" Margin="0,28,0,-28"/>
@@ -102,9 +101,6 @@
             <TextBlock Text="Température min : " Grid.Column="1" Name="TB_min_j3" Margin="0,28,0,-28"/>
             <TextBlock Text="Température max : " Grid.Column="1" Name="TB_max_j3" Margin="0,43,0,-29"/>
             <TextBlock Text="Condition : " Grid.Column="1" Name="TB_Condition_J3" Margin="0,58,86,-43"/>
-
-
-            <!-- Vos éléments pour la quatrième ligne ici -->
         </Grid>
 
         <!-- Cinquième ligne avec 3 colonnes -->
@@ -114,6 +110,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Les éléments pour la cinquième ligne ici -->
             <Image Grid.Column="0" HorizontalAlignment="Stretch" Name="Day2_Image"/>
             <TextBlock Text=" Jour 2 : " FontWeight="Bold" FontSize="20" Grid.Column="0" Name="TB_Jour2"/>
             <TextBlock Text="Température min : " Grid.Column="0" Name="TB_min_j2" Margin="0,28,0,-28"/>
@@ -125,7 +122,7 @@
             <TextBlock Text="Température min : " Grid.Column="1" Name="TB_min_j4" Margin="0,28,0,-28"/>
             <TextBlock Text="Température max : " Grid.Column="1" Name="TB_max_j4" Margin="0,45,0,-31"/>
             <TextBlock Text="Condition : " Grid.Column="1" Name="TB_Condition_J4" Margin="0,62,0,-48"/>
-            <!-- Vos éléments pour la cinquième ligne ici -->
+
         </Grid>
     </Grid>
 </Window>
